@@ -1,0 +1,14 @@
+@model IEnumerable<Product>
+
+<h1>Available Products</h1>
+
+@foreach (var item in Model)
+{
+    <div class="product">
+        <img src="@item.ImageUrl" alt="@item.Name" />
+        <h2>@item.Name</h2>
+        <p>@item.Description</p>
+        <p>Price: @item.Price</p>
+        <a href="/cart/add/@item.Id">Add to Cart</a>
+    </div>
+}
